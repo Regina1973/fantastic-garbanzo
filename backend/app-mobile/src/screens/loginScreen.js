@@ -11,12 +11,9 @@ import {
 
 import api from "../services/api";
 
-export default function RegisterScreen({
+export default function LoginScreen({
   navigation
 }) {
-
-  const [nome, setNome] =
-  useState("");
 
   const [email, setEmail] =
   useState("");
@@ -24,28 +21,30 @@ export default function RegisterScreen({
   const [senha, setSenha] =
   useState("");
 
-  async function registrar() {
+  async function login() {
 
     try {
 
+      const response =
       await api.post(
-        "/usuarios/register",
+        "/usuarios/login",
         {
-          nome,
           email,
           senha
         }
       );
 
-      alert("Conta criada!");
+      console.log(response.data);
 
-      navigation.navigate("Login");
+      alert("Login realizado!");
+
+      navigation.navigate("Home");
 
     } catch (error) {
 
       console.log(error);
 
-      alert("Erro ao registrar");
+      alert("Erro no login");
     }
   }
 
@@ -68,20 +67,8 @@ export default function RegisterScreen({
           color: "#ff6600"
         }}
       >
-        Criar Conta
+        Login
       </Text>
-
-      <TextInput
-        placeholder="Nome"
-        value={nome}
-        onChangeText={setNome}
-        style={{
-          backgroundColor: "#fff",
-          padding: 15,
-          borderRadius: 10,
-          marginBottom: 15
-        }}
-      />
 
       <TextInput
         placeholder="Email"
@@ -109,7 +96,7 @@ export default function RegisterScreen({
       />
 
       <TouchableOpacity
-        onPress={registrar}
+        onPress={login}
         style={{
           backgroundColor: "#ff6600",
           padding: 15,
@@ -125,7 +112,26 @@ export default function RegisterScreen({
             fontWeight: "bold"
           }}
         >
-          Registrar
+          Entrar
+        </Text>
+
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate("Register")
+        }
+        style={{
+          marginTop: 20
+        }}
+      >
+
+        <Text
+          style={{
+            textAlign: "center"
+          }}
+        >
+          Criar conta
         </Text>
 
       </TouchableOpacity>
