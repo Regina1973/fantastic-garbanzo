@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  background: #bdd8bf;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  text-align: center;
+  padding: 40px;
+}
+
+h1 {
+  color: #045c3c;
+  font-size: 3rem;
+}
+
+h2 {
+  color: #045c3c;
+}
+
+.card {
+  background: white;
+  width: 260px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.card:hover {
+  transform: scale(1.02);
+  transition: 0.3s;
+}
+
+button {
+  background: #8C1C13;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #70150f;
+}
+
+.logo-area {
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 180px;
+}
