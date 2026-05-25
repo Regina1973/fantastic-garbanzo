@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+node_modules
+.env
+.expo
+dist
+build
+=======
+>>>>>>> origin/main
 
 # Gradle files
 .gradle/
@@ -34,3 +44,7 @@ google-services.json
 # Android Profiling
 *.hprof
 >>>>>>> d9945a2e29ca51b2d282ed8502c56526ead96997
+<<<<<<< HEAD
+=======
+>>>>>>> 77bff52 (fix css)
+>>>>>>> origin/main
