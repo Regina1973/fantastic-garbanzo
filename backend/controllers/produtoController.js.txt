@@ -1,0 +1,17 @@
+function listarProdutos(req, res){
+
+   const produtos = [
+      {
+         id:1,
+         nome:"X-Burger",
+         preco:29.90
+      }
+   ];
+
+   res.json(produtos);
+
+}
+
+module.exports = {
+   listarProdutos
+};
