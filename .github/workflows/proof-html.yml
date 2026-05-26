@@ -1,0 +1,38 @@
+name: App Lanchonete CI
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalar frontend
+        run: |
+          cd frontend
+          npm install
+
+      - name: Build frontend
+        run: |
+          cd frontend
+          npm run build
+
+  backend:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalar backend
+        run: |
+          cd backend
+          npm install
+
+      - name: Testar backend
+        run: |
+          cd backend
+          npm test --if-present
