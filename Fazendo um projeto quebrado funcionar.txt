@@ -1,0 +1,1330 @@
+Pelo que você construiu até agora no projeto Lanchonete Sabor & Cia, sua aplicação já possui uma boa base inicial de backend + app mobile. Aqui está o panorama atual do sistema:
+
+Estrutura atual do projeto
+
+Você está trabalhando em um projeto chamado:
+
+lanchonete_sabor_e_cia
+
+com estrutura semelhante a:
+
+lanchonete_sabor_e_cia/
+├── backend/
+├── app-mobile/
+O que já existe no sistema
+Backend Node.js + Express
+
+Você já iniciou:
+
+servidor Express
+rotas
+controllers
+conexão com MongoDB
+organização em pastas
+Pastas mencionadas anteriormente
+backend/
+├── controllers/
+├── routes/
+├── models/
+├── server.js
+
+Você também criou ou tentou criar:
+
+produtoController
+routes/produtos.js
+Banco de dados MongoDB
+
+Você configurou:
+-----------------------------------------------------------------------------------
+MongoDB Atlas
+string de conexão
+cluster online
+
+Inclusive apareceram erros de DNS do MongoDB (querySrv ECONN) durante a configuração.
+
+
+-------------------------------------------------------------------------------------
+
+
+
+
+Aplicação Mobile (Expo + React Native)
+
+Seu app mobile já iniciou corretamente via:
+
+npm start
+expo start
+
+E o Metro Bundler abriu normalmente.
+
+Você também ativou:
+
+React Compiler
+Expo
+Funcionalidades já presentes ou parcialmente iniciadas
+Cardápio
+
+Você já possui itens cadastrados:
+
+X-Burger — R$ 18
+Batata Frita — R$ 12
+Funcionalidades planejadas / parcialmente estruturadas
+Cliente
+
+Você mencionou:
+
+✅ login cliente
+✅ perfil cliente
+✅ histórico pedidos
+✅ favoritos
+
+Recursos que ainda faltam (segundo suas mensagens anteriores)
+Favoritos
+
+Ainda precisa implementar:
+
+adicionar favorito
+remover favorito
+listar favoritos
+Endereço de entrega
+
+Ainda não possui:
+
+rua
+número
+bairro
+cidade
+CEP
+complemento
+Frete automático
+
+Ainda falta:
+
+cálculo de entrega
+taxa por bairro
+distância
+Recuperação de senha
+
+Ainda não implementado.
+
+GitHub
+
+Seu repositório atual está conectado em:
+
+GitHub
+
+Você também configurou:
+
+git remote
+autenticação GitHub
+login via device code
+Problemas técnicos que você já resolveu ou identificou
+Node.js
+-----------------------------------------------------------------------------------
+Você estava tentando atualizar para Node 22.
+
+Erros encontrados
+
+Você enfrentou:
+
+Cannot find module '../controllers/produtoController'
+remote origin already exists
+README.md not found
+Resolve-DnsName not recognized
+nvm: command not found
+
+
+
+
+O que sua aplicação provavelmente já consegue fazer
+Fluxo básico atual
+
+Seu sistema já está próximo de ter:
+
+Backend rodando
+API Express funcionando
+App mobile Expo iniciando
+Cardápio carregado
+Produtos cadastrados
+Estrutura de usuários iniciada
+O que falta para virar um app de delivery funcional
+Prioridade alta
+1. Autenticação completa
+cadastro
+login JWT
+sessão
+2. Produtos
+listar produtos
+detalhes
+categorias
+3. Carrinho
+
+Você ainda não comentou sobre:
+
+adicionar carrinho
+remover item
+finalizar pedido
+
+Provavelmente ainda falta.
+
+4. Pedidos
+
+Muito importante:
+
+criar pedido
+acompanhar status
+histórico real
+5. Painel administrativo
+
+Ainda não apareceu nas conversas:
+
+cadastrar produtos
+editar preços
+acompanhar pedidos
+Tecnologias do projeto
+Backend
+Node.js
+Express
+MongoDB
+Mobile
+React Native
+Expo
+Versionamento
+GitHub
+Situação atual do projeto
+
+Seu projeto está na fase:
+
+MVP inicial de delivery
+
+Você já saiu da fase “projeto vazio” e entrou na fase de:
+
+estruturação real
+backend funcional
+mobile iniciando
+integração com banco
+organização de rotas
+
+O próximo salto é transformar isso em:
+
+fluxo completo de pedidos + autenticação + carrinho.
+
+------------------------------------------------------------------------------------
+Consigo te ajudar a resolver tudo, mas preciso trabalhar nos arquivos reais do projeto para corrigir os erros corretamente.
+
+Hoje os principais problemas do seu sistema parecem estar nestes pontos:
+
+Problemas identificados
+Backend
+erro Cannot find module '../controllers/produtoController'
+rotas quebradas
+estrutura incompleta
+possível problema no server.js
+MongoDB
+erro querySrv ECONN
+conexão Atlas mal configurada
+DNS do Windows/Git Bash
+GitHub
+remote origin already exists
+autenticação GitHub confusa
+push não concluído
+Node.js
+versão antiga/incompatível
+tentativa de usar nvm no Windows sem instalar
+Mobile React Native + Expo
+app inicia
+mas ainda falta integração com API
+telas incompletas
+estrutura inicial do frontend
+O que eu preciso para corrigir tudo
+
+Envie estes arquivos/pastas do projeto:
+
+Backend
+backend/
+├── server.js
+├── package.json
+├── .env
+├── routes/
+├── controllers/
+├── models/
+Mobile
+app-mobile/
+├── package.json
+├── App.js
+├── src/
+Como enviar
+
+Você pode:
+
+arrastar a pasta compactada .zip
+ou enviar os arquivos aqui no chat
+O que eu vou fazer
+
+Depois que você enviar, eu posso:
+
+Corrigir backend
+Express
+rotas
+controllers
+MongoDB
+JWT
+autenticação
+Corrigir mobile
+Expo
+React Native
+telas
+consumo da API
+navegação
+Organizar arquitetura
+
+Vou estruturar corretamente:
+
+backend/
+frontend/
+app-mobile/
+Implementar funcionalidades faltantes
+Cliente
+login
+cadastro
+perfil
+Delivery
+carrinho
+pedidos
+histórico
+favoritos
+Administração
+cadastrar produtos
+editar preços
+painel admin
+Resultado esperado
+
+Seu projeto ficará com:
+
+backend funcionando
+MongoDB conectado
+app Expo rodando
+API integrada
+fluxo de pedidos funcionando
+estrutura profissional
+Próximo passo
+
+Envie o .zip do projeto inteiro ou pelo menos:
+
+backend/
+app-mobile/
+
+Aí eu começo corrigindo tudo diretamente no código.
+
+----------------------------------------------------------------------------------
+
+Você deve começar pela base do sistema. Hoje o seu projeto ainda está na fase de estruturação, então a prioridade é fazer o núcleo funcionar antes de adicionar novas funções.
+
+Ordem correta para construir sua aplicação
+1. Backend funcionando primeiro
+
+Comece pelo backend porque ele será o “cérebro” da aplicação.
+
+Prioridade:
+
+backend/
+├── server.js
+├── config/
+├── models/
+├── controllers/
+├── routes/
+Primeiro objetivo
+Fazer o servidor rodar sem erros
+
+Você precisa garantir:
+
+Node funcionando
+Express funcionando
+MongoDB conectando
+servidor iniciando
+Etapa 1 — Corrigir o server.js
+
+Seu server.js deve ficar parecido com isto:
+
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+require("dotenv").config();
+
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB conectado"))
+  .catch((err) => console.log(err));
+
+app.get("/", (req, res) => {
+  res.send("API funcionando");
+});
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
+});
+Etapa 2 — Criar .env
+
+Arquivo:
+
+backend/.env
+
+Conteúdo:
+
+MONGO_URI=sua_string_mongodb
+PORT=5000
+Etapa 3 — Instalar dependências
+
+Dentro da pasta backend:
+
+npm install express mongoose cors dotenv nodemon
+Etapa 4 — Testar servidor
+
+Rodar:
+
+node server.js
+
+ou:
+
+npx nodemon server.js
+
+Se aparecer:
+
+MongoDB conectado
+Servidor rodando na porta 5000
+
+então a base está pronta.
+
+2. Depois: Produtos
+
+Quando backend estiver estável:
+
+Criar model de produto
+const mongoose = require("mongoose");
+
+const ProdutoSchema = new mongoose.Schema({
+  nome: String,
+  preco: Number,
+  descricao: String,
+  imagem: String
+});
+
+module.exports = mongoose.model("Produto", ProdutoSchema);
+3. Depois: Rotas
+Criar rota /produtos
+
+Você já começou isso antes.
+
+Estrutura:
+
+routes/produtos.js
+controllers/produtoController.js
+models/Produto.js
+4. Depois: App Mobile
+
+Somente quando a API estiver funcionando.
+
+Porque o app depende da API.
+
+---------------------------------------------------------------------------------
+Seu Windows provavelmente está sem as ferramentas de rede instaladas no terminal atual, mas isso não impede de resolver.
+
+Vamos pelo caminho mais rápido.
+
+Faça isto agora
+1. Troque a conexão do MongoDB Atlas
+
+No MongoDB Atlas:
+
+Database
+→ Connect
+→ Drivers
+→ Show all connection options
+
+Escolha:
+
+Standard connection string (mongodb://)
+
+NÃO use:
+
+mongodb+srv://
+2. Sua string ficará parecida com isto
+mongodb://usuario:senha@ac-xxxx-shard-00-00.cvneipo.mongodb.net:27017,ac-xxxx-shard-00-01.cvneipo.mongodb.net:27017,ac-xxxx-shard-00-02.cvneipo.mongodb.net:27017/lanchonete?ssl=true&replicaSet=atlas-xxxxx-shard-0&authSource=admin&retryWrites=true&w=majority
+3. Coloque no .env
+
+Arquivo:
+
+backend/.env
+
+Exemplo:
+
+MONGO_URI=mongodb://....
+PORT=5000
+4. Reinicie o backend
+
+Pare o servidor:
+
+CTRL + C
+
+Depois rode:
+
+node server.js
+5. Resultado esperado
+
+Você deve ver:
+
+MongoDB conectado
+Servidor rodando na porta 5000
+Se ainda der erro
+
+Provavelmente falta liberar o IP no Atlas.
+
+No Atlas:
+
+Network Access
+→ Add IP Address
+→ Allow Access From Anywhere
+
+Vai criar:
+
+0.0.0.0/0
+Outro detalhe importante
+
+Seu mongoose.connect deve estar assim:
+
+mongoose.connect(process.env.MONGO_URI)
+
+Sem opções antigas como:
+
+useNewUrlParser
+useUnifiedTopology
+
+No Mongoose atual elas não são mais necessárias.
+
+Sobre o nslookup
+
+Seu sistema provavelmente está usando:
+
+PowerShell limitado
+terminal interno do VS Code
+PATH do Windows incompleto
+
+Mas isso não bloqueia o projeto.
+O mais importante agora é:
+
+✅ usar mongodb://
+✅ liberar IP no Atlas
+✅ reiniciar backend.
+
+------------------------------------------------------------------------------------
+
+
+Isso parece ser uma credencial/token do MongoDB.
+Por segurança, você deve considerar esse valor comprometido e revogá-lo imediatamente.
+
+O que fazer agora
+1. Não compartilhe tokens/senhas no chat
+
+Evite enviar:
+
+senha MongoDB
+URI completa
+tokens
+API keys
+JWT secrets
+2. Revogue esse token
+
+No MongoDB Atlas:
+
+Access Manager
+→ API Keys
+
+ou:
+
+Database Access
+
+Remova/regere a credencial exposta.
+
+3. Crie uma nova senha
+
+Use algo simples temporariamente:
+
+Lanchonete123
+
+(evite caracteres especiais enquanto testa conexão)
+
+4. Atualize o .env
+
+Exemplo:
+
+MONGO_URI=mongodb://usuario:senha@...
+PORT=5000
+5. Nunca suba .env para o GitHub
+
+Crie um .gitignore:
+
+node_modules
+.env
+--------------------------------------------------------------------------------------
+
+
+Sim. Existem vários bancos gratuitos muito bons para seu projeto de delivery, e alguns são até mais fáceis que o MongoDB Atlas no início.
+
+Melhor opção para você agora
+SQLite
+Vantagens
+totalmente gratuito
+não precisa internet
+não precisa DNS
+não precisa servidor externo
+simples para iniciantes
+funciona localmente
+ótimo para MVP
+Para seu projeto de lanchonete
+
+SQLite é excelente porque você ainda está:
+
+aprendendo backend
+estruturando API
+testando funcionalidades
+
+Você NÃO precisa de um banco em nuvem agora.
+
+Como funciona
+
+O banco vira apenas um arquivo:
+
+database.sqlite
+
+Dentro do projeto.
+
+Vantagem enorme
+
+Você elimina TODOS esses problemas:
+
+❌ querySrv ECONNREFUSED
+❌ DNS
+❌ Atlas
+❌ IP liberado
+❌ conexão online
+❌ cluster
+Stack ideal para você hoje
+Backend
+Node.js
+Express
+SQLite
+Mobile
+React Native
+Expo
+Instalação
+
+Dentro do backend:
+
+npm install sqlite3 sequelize
+Estrutura ideal
+backend/
+├── database/
+├── models/
+├── routes/
+├── controllers/
+├── server.js
+Exemplo de conexão SQLite
+database/db.js
+const { Sequelize } = require("sequelize");
+
+const sequelize = new Sequelize({
+  dialect: "sqlite",
+  storage: "./database/database.sqlite"
+});
+
+module.exports = sequelize;
+Produto model
+const { DataTypes } = require("sequelize");
+const sequelize = require("../database/db");
+
+const Produto = sequelize.define("Produto", {
+  nome: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+
+  preco: {
+    type: DataTypes.FLOAT,
+    allowNull: false
+  },
+
+  descricao: {
+    type: DataTypes.STRING
+  }
+});
+
+module.exports = Produto;
+Server.js
+const express = require("express");
+const sequelize = require("./database/db");
+
+const app = express();
+
+app.use(express.json());
+
+sequelize.sync()
+  .then(() => console.log("Banco SQLite conectado"))
+  .catch(err => console.log(err));
+
+app.listen(5000, () => {
+  console.log("Servidor rodando na porta 5000");
+});
+Resultado
+
+Você terá:
+
+✅ backend funcionando
+✅ banco local
+✅ sem internet
+✅ sem Atlas
+✅ sem DNS
+✅ muito mais simples
+
+-----------------------------------------------------------------------------------
+
+
+
+
+
+--------------------------------------------------------------------------------------
+existe outro banco de dados que não exija pagamentos
+
+Sim. Existem vários bancos gratuitos muito bons para seu projeto de delivery, e alguns são até mais fáceis que o MongoDB Atlas no início.
+
+Melhor opção para você agora
+SQLite
+Vantagens
+totalmente gratuito
+não precisa internet
+não precisa DNS
+não precisa servidor externo
+simples para iniciantes
+funciona localmente
+ótimo para MVP
+Para seu projeto de lanchonete
+
+SQLite é excelente porque você ainda está:
+
+aprendendo backend
+estruturando API
+testando funcionalidades
+
+Você NÃO precisa de um banco em nuvem agora.
+
+Como funciona
+
+O banco vira apenas um arquivo:
+
+database.sqlite
+
+Dentro do projeto.
+
+Vantagem enorme
+
+Você elimina TODOS esses problemas:
+
+❌ querySrv ECONNREFUSED
+❌ DNS
+❌ Atlas
+❌ IP liberado
+❌ conexão online
+❌ cluster
+
+Perfeito ✅
+Então agora você já deve ter algo parecido com:
+
+backend/
+├── database/
+│   └── db.js
+Próximo passo
+
+Agora precisamos verificar se o server.js está conectado ao SQLite corretamente.
+
+Seu server.js deve ficar assim:
+
+const express = require("express");
+const sequelize = require("./database/db");
+
+const app = express();
+
+app.use(express.json());
+
+sequelize.authenticate()
+  .then(() => {
+    console.log("SQLite conectado");
+  })
+  .catch((err) => {
+    console.log("Erro ao conectar:", err);
+  });
+
+app.get("/", (req, res) => {
+  res.send("API funcionando");
+});
+
+app.listen(5000, () => {
+  console.log("Servidor rodando na porta 5000");
+});
+Agora faça isto
+Rode o servidor
+node server.js
+Resultado esperado
+
+Você deve ver:
+
+Servidor rodando na porta 5000
+SQLite conectado
+Depois confira se apareceu
+database.sqlite
+
+em:
+
+backend/database/
+Se aparecer algum erro
+
+Me envie:
+
+o conteúdo do server.js
++
+a mensagem do terminal
+
+que eu corrijo imediatamente.
+
+sim já está assim
+
+Ótimo ✅
+Então agora você já tem:
+
+✅ Express funcionando
+✅ SQLite instalado
+✅ conexão configurada
+✅ backend estruturado
+
+Sim ✅
+O próximo passo ideal agora é começar a integrar o frontend/mobile com sua API.
+
+Você já tem a base do backend funcionando.
+Agora precisa provar que o app consegue:
+
+buscar produtos da API
+e mostrar na tela
+Ordem correta agora
+1. Backend ✅
+
+Você já fez:
+
+✅ API
+✅ banco
+✅ produtos
+2. Frontend Mobile ← AGORA
+
+Você vai:
+
+buscar produtos
+mostrar cardápio
+Fluxo da aplicação
+
+Seu app mobile vai fazer:
+
+React Native
+↓
+GET /produtos
+↓
+Backend Express
+↓
+SQLite
+O que você precisa criar no app-mobile
+Estrutura ideal
+app-mobile/
+├── src/
+│   ├── screens/
+│   │   └── HomeScreen.js
+│   │
+│   ├── services/
+│   │   └── api.js
+│   │
+│   └── components/
+
+
+Texto colado(18).txt
+Documento
+
+Perfeito 🎉
+Seu backend está 100% funcionando agora.
+
+Você já tem:
+
+✅ Express rodando
+✅ SQLite conectado
+✅ tabela Produtos criada
+✅ API funcionando
+✅ servidor na porta 5000
+Próximo passo agora
+Rodar o app mobile
+
+Abra OUTRO terminal.
+
+1. Vá para app-mobile
+cd app-mobile
+2. Inicie o Expo
+npm start
+
+ou:
+
+expo start
+3. Verifique se estes arquivos existem
+api.js
+app-mobile/src/services/api.js
+
+Conteúdo:
+
+import axios from "axios";
+
+const api = axios.create({
+  baseURL: "http://192.168.15.3:5000"
+});
+
+export default api;
+4. Verifique HomeScreen.js
+app-mobile/src/screens/HomeScreen.js
+5. Verifique App.js
+import React from "react";
+
+import HomeScreen from "./src/screens/HomeScreen";
+
+export default function App() {
+  return <HomeScreen />;
+}
+Resultado esperado
+
+Quando o Expo abrir no celular/emulador:
+
+Você verá:
+
+Cardápio
+
+e os produtos cadastrados na API.
+
+Se aparecer tela branca ou erro
+
+Me envie:
+
+App.js
+HomeScreen.js
+api.js
++
+erro do Expo
+
+que eu corrijo imediatamente.
+
+como cadastrar produtos e buscar produtos no cardapio?
+
+Agora que seu backend está funcionando, você já consegue:
+
+✅ cadastrar produtos
+✅ buscar produtos
+✅ mostrar no cardápio
+
+Vou te mostrar o fluxo completo 🚀
+
+1. Cadastrar produtos
+
+Você já possui esta rota:
+
+POST /produtos
+Como cadastrar
+Opção mais fácil: Thunder Client
+
+Instale no Visual Studio Code:
+
+Thunder Client Extension
+
+Criar requisição
+Método
+POST
+URL
+http://localhost:5000/produtos
+Body → JSON
+{
+  "nome": "X-Burger",
+  "preco": 18,
+  "descricao": "Hambúrguer artesanal",
+  "imagem": "xburger.png"
+}
+Clique em Send
+
+Resultado esperado:
+
+{
+  "id": 1,
+  "nome": "X-Burger",
+  "preco": 18
+}
+Cadastre mais produtos
+Exemplo 2
+{
+  "nome": "Batata Frita",
+  "preco": 12,
+  "descricao": "Batata crocante",
+  "imagem": "batata.png"
+}
+2. Buscar produtos
+
+Sua rota:
+
+GET /produtos
+Testar no navegador
+
+Abra:
+
+http://localhost:5000/produtos
+Resultado esperado
+[
+  {
+    "id": 1,
+    "nome": "X-Burger",
+    "preco": 18
+  },
+  {
+    "id": 2,
+    "nome": "Batata Frita",
+    "preco": 12
+  }
+]
+3. Mostrar no cardápio do app
+
+O HomeScreen.js já faz isso automaticamente.
+
+Ele usa:
+
+api.get("/produtos")
+Fluxo completo
+
+Seu app funciona assim:
+
+React Native
+↓
+GET /produtos
+↓
+Express
+↓
+SQLite
+↓
+Produtos retornam
+↓
+Cardápio aparece
+O que você já possui agora
+✅ cadastro de produtos
+✅ banco funcionando
+✅ API REST
+✅ busca de produtos
+✅ cardápio dinâmico
+Próximo passo recomendado
+
+Depois que o cardápio aparecer:
+
+Criar:
+tela detalhes produto
+botão adicionar carrinho
+carrinho
+login cliente
+pedidos
+
+Seu delivery já está começando a ficar completo 🚀
+
+Texto colado(19).txt
+Documento
+Texto colado(21).txt
+Documento
+esse tom de verde é qual 
+
+O dourado dessa imagem ficou MUITO elegante ✨😮
+
+Ele NÃO é aquele dourado amarelo forte.
+
+É um dourado mais:
+
+fosco
+sofisticado
+luxuoso
+discreto
+O tom aproximado 🚀
+#c8a96b
+Também lembra 👍
+#d4af37
+
+mas menos vibrante.
+
+Um tom MUITO parecido 🌿✨
+#b9924c
+O mais bonito para sua marca 🚀
+
+eu acho que seria:
+
+#c8a96b
+Porque combina PERFEITAMENTE com 👍
+#0f3d3e
+
+(verde petróleo)
+
+Essa combinação transmite 🚀
+luxo discreto
+gastronomia premium
+restaurante boutique
+marca sofisticada
+Paleta FINAL que eu usaria 🌿🪵✨
+#0f3d3e   /* verde petróleo */
+#1e1e1e   /* preto elegante */
+#c8a96b   /* dourado premium */
+#f5f5f5   /* branco suave */
+#2c2c2c   /* cinza escuro */
+Honestamente 👍
+
+essa paleta ficou MUITO mais sofisticada do que:
+
+verde vibrante + laranja
+Agora sua identidade visual parece 🚀
+restaurante premium real
+marca de alto padrão
+site moderno de gastronomia
+
+Isso mesmo 👍
+
+O frontend Vite está funcionando como base, mas ainda falta virar funcional de verdade.
+
+O pagamento deve vir por último.
+
+Ordem certa agora:
+
+1. Home buscar produtos do backend
+2. Carrinho funcionar no frontend
+3. Login/cadastro
+4. Pedido salvar no banco
+5. Admin cadastrar produtos
+6. Forma de pagamento
+7. Pagamento real
+
+Primeiro pagamento simples:
+
+PIX
+Cartão
+Dinheiro na entrega
+
+O pedido salva assim:
+
+{
+  "produtos": [],
+  "total": 58,
+  "formaPagamento": "PIX",
+  "status": "Pendente"
+}
+
+Pagamento real com gateway vem depois, porque precisa de backend, pedido e segurança funcionando antes.
+
+ Home buscar produtos do backend e poder acrescentar no cardapio
+
+Vamos fazer essa parte por etapas: primeiro a Home vai buscar produtos do backend, depois o Admin vai cadastrar produto no cardápio, e a Home atualiza buscando novamente pela API.
+
+Pensou por 6s
+
+Sim. Vamos começar pelo fluxo certo:
+
+Backend
+GET /produtos
+POST /produtos
+
+Frontend
+Home busca produtos
+Admin cadastra produto
+Home mostra no cardápio
+1. Backend precisa ter essas rotas
+
+Arquivo:
+
+backend/routes/produtos.js
+const express = require("express");
+const router = express.Router();
+
+const Produto = require("../models/Produto");
+
+router.get("/", async (req, res) => {
+  const produtos = await Produto.find();
+  res.json(produtos);
+});
+
+router.post("/", async (req, res) => {
+  const novoProduto = await Produto.create(req.body);
+  res.status(201).json(novoProduto);
+});
+
+module.exports = router;
+
+No server.js precisa ter:
+
+const produtoRoutes = require("./routes/produtos");
+
+app.use("/produtos", produtoRoutes);
+2. Frontend cria conexão com backend
+
+Arquivo:
+
+frontend/src/services/api.js
+import axios from "axios";
+
+const api = axios.create({
+  baseURL: "http://localhost:5000"
+});
+
+export default api;
+3. Home busca produtos do backend
+
+Arquivo:
+
+frontend/src/pages/Home.jsx
+import { useEffect, useState } from "react";
+import api from "../services/api";
+
+export default function Home() {
+  const [produtos, setProdutos] = useState([]);
+
+  async function buscarProdutos() {
+    const response = await api.get("/produtos");
+    setProdutos(response.data);
+  }
+
+  useEffect(() => {
+    buscarProdutos();
+  }, []);
+
+  return (
+    <main>
+      <h1>Cardápio Sabor & Cia</h1>
+
+      <section className="produtos">
+        {produtos.map((produto) => (
+          <div className="card" key={produto._id}>
+            <img src={produto.imagem} alt={produto.nome} />
+
+            <h2>{produto.nome}</h2>
+
+            <p>{produto.descricao}</p>
+
+            <strong>
+              R$ {produto.preco}
+            </strong>
+
+            <button>
+              Adicionar ao carrinho
+            </button>
+          </div>
+        ))}
+      </section>
+    </main>
+  );
+}
+4. Próximo passo
+
+Depois disso criamos a tela:
+
+Admin.jsx
+
+para cadastrar produto com:
+
+nome
+preço
+descrição
+imagem
+
+e enviar para:
+
+POST /produtos
+eu vou colocar na pasta do app_lanchonete/lanchonete_sabor_e_cia não? backend?
+
+SIM 👍😄🚀
+
+Tudo isso do:
+
+server.js
+routes
+models
+controllers
+
+fica dentro do:
+
+app_lanchonete/lanchonete_sabor_e_cia/backend
+Estrutura correta 🚀
+lanchonete_sabor_e_cia
+│
+├── backend
+│   ├── config
+│   ├── controllers
+│   ├── middlewares
+│   ├── models
+│   ├── routes
+│   ├── node_modules
+│   ├── .env
+│   ├── package.json
+│   └── server.js
+│
+├── frontend-web
+│
+└── app-mobile
+Então 👍
+Backend → API + banco + login
+
+fica aqui:
+
+backend
+Frontend React/Vite 🚀
+
+fica aqui:
+
+frontend-web/frontend
+Mobile Expo/React Native 👍
+
+fica aqui:
+
+app-mobile
+O fluxo vai funcionar assim 🚀
+Frontend
+↓
+faz requisição HTTP
+↓
+Backend
+↓
+MongoDB
+Exemplo 👍
+Home.jsx
+↓
+GET /produtos
+↓
+backend/routes/produtos.js
+↓
+MongoDB
+Então AGORA 🚀
+
+você vai trabalhar principalmente dentro de:
+
+backend
+
+para construir:
+
+produtos
+usuarios
+login
+pedidos
+admin
+
+/***********************************************************/
+
+

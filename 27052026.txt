@@ -1,0 +1,1481 @@
+SIM 😄🚀🌿
+Hoje continuamos a transformar a:
+
+Sabor & Cia
+
+em um projeto full stack real.
+
+Onde paramos 👍
+
+Você já tem:
+
+✅ frontend Vite funcionando
+✅ GitHub funcionando
+✅ estrutura organizada
+✅ identidade visual premium
+✅ logo definido
+✅ paleta verde petróleo + dourado
+Então HOJE 🚀
+
+vamos começar a parte mais importante:
+
+🔥 backend definitivo
+Ordem ideal de hoje 👍
+1. Estrutura backend profissional
+2. MongoDB conexão
+3. Model Produto
+4. Model Usuário
+5. Login/autenticação
+6. Rotas API
+7. Salvar pedidos
+Estrutura backend que vamos construir 🚀
+backend
+│
+├── config
+├── controllers
+├── middlewares
+├── models
+├── routes
+├── services
+└── server.js
+E depois 👍
+
+ligaremos:
+
+frontend → backend
+mobile → backend
+Primeiro passo AGORA 🚀
+
+Entre na pasta:
+
+cd backend
+Depois execute 👍
+ls
+
+e me mostre o que aparece 😄
+
+Isso mesmo 👍
+
+O frontend Vite está funcionando como base, mas ainda falta virar funcional de verdade.
+
+O pagamento deve vir por último.
+
+Ordem certa agora:
+
+1. Home buscar produtos do backend
+2. Carrinho funcionar no frontend
+3. Login/cadastro
+4. Pedido salvar no banco
+5. Admin cadastrar produtos
+6. Forma de pagamento
+7. Pagamento real
+
+Primeiro pagamento simples:
+
+PIX
+Cartão
+Dinheiro na entrega
+
+O pedido salva assim:
+
+{
+  "produtos": [],
+  "total": 58,
+  "formaPagamento": "PIX",
+  "status": "Pendente"
+}
+
+Pagamento real com gateway vem depois, porque precisa de backend, pedido e segurança funcionando antes.
+
+ Home buscar produtos do backend e poder acrescentar no cardapio
+
+Vamos fazer essa parte por etapas: primeiro a Home vai buscar produtos do backend, depois o Admin vai cadastrar produto no cardápio, e a Home atualiza buscando novamente pela API.
+
+Pensou por 6s
+
+Sim. Vamos começar pelo fluxo certo:
+
+Backend
+GET /produtos
+POST /produtos
+
+Frontend
+Home busca produtos
+Admin cadastra produto
+Home mostra no cardápio
+1. Backend precisa ter essas rotas
+
+Arquivo:
+
+backend/routes/produtos.js
+const express = require("express");
+const router = express.Router();
+
+const Produto = require("../models/Produto");
+
+router.get("/", async (req, res) => {
+  const produtos = await Produto.find();
+  res.json(produtos);
+});
+
+router.post("/", async (req, res) => {
+  const novoProduto = await Produto.create(req.body);
+  res.status(201).json(novoProduto);
+});
+
+module.exports = router;
+
+No server.js precisa ter:
+
+const produtoRoutes = require("./routes/produtos");
+
+app.use("/produtos", produtoRoutes);
+2. Frontend cria conexão com backend
+
+Arquivo:
+
+frontend/src/services/api.js
+import axios from "axios";
+
+const api = axios.create({
+  baseURL: "http://localhost:5000"
+});
+
+export default api;
+3. Home busca produtos do backend
+
+Arquivo:
+
+frontend/src/pages/Home.jsx
+import { useEffect, useState } from "react";
+import api from "../services/api";
+
+export default function Home() {
+  const [produtos, setProdutos] = useState([]);
+
+  async function buscarProdutos() {
+    const response = await api.get("/produtos");
+    setProdutos(response.data);
+  }
+
+  useEffect(() => {
+    buscarProdutos();
+  }, []);
+
+  return (
+    <main>
+      <h1>Cardápio Sabor & Cia</h1>
+
+      <section className="produtos">
+        {produtos.map((produto) => (
+          <div className="card" key={produto._id}>
+            <img src={produto.imagem} alt={produto.nome} />
+
+            <h2>{produto.nome}</h2>
+
+            <p>{produto.descricao}</p>
+
+            <strong>
+              R$ {produto.preco}
+            </strong>
+
+            <button>
+              Adicionar ao carrinho
+            </button>
+          </div>
+        ))}
+      </section>
+    </main>
+  );
+}
+4. Próximo passo
+
+Depois disso criamos a tela:
+
+Admin.jsx
+
+para cadastrar produto com:
+
+nome
+preço
+descrição
+imagem
+
+e enviar para:
+
+POST /produtos
+eu vou colocar na pasta do app_lanchonete/lanchonete_sabor_e_cia não? backend?
+
+SIM 👍😄🚀
+
+Tudo isso do:
+
+server.js
+routes
+models
+controllers
+
+fica dentro do:
+
+app_lanchonete/lanchonete_sabor_e_cia/backend
+Estrutura correta 🚀
+lanchonete_sabor_e_cia
+│
+├── backend
+│   ├── config
+│   ├── controllers
+│   ├── middlewares
+│   ├── models
+│   ├── routes
+│   ├── node_modules
+│   ├── .env
+│   ├── package.json
+│   └── server.js
+│
+├── frontend-web
+│
+└── app-mobile
+Então 👍
+Backend → API + banco + login
+
+fica aqui:
+
+backend
+Frontend React/Vite 🚀
+
+fica aqui:
+
+frontend-web/frontend
+Mobile Expo/React Native 👍
+
+fica aqui:
+
+app-mobile
+O fluxo vai funcionar assim 🚀
+Frontend
+↓
+faz requisição HTTP
+↓
+Backend
+↓
+MongoDB
+Exemplo 👍
+Home.jsx
+↓
+GET /produtos
+↓
+backend/routes/produtos.js
+↓
+MongoDB
+Então AGORA 🚀
+
+você vai trabalhar principalmente dentro de:
+
+backend
+
+para construir:
+
+produtos
+usuarios
+login
+pedidos
+admin
+
+-----------------------------------------------------------------------------------
+Sim 😄🚀🌿 agora temos o registro reconstruído.
+
+Hoje no projeto Sabor & Cia, o foco é começar o backend definitivo e ligar a Home ao cardápio vindo da API.
+
+O que precisa ser feito hoje:
+
+1. Entrar na pasta correta
+
+No terminal:
+
+cd app_lanchonete/lanchonete_sabor_e_cia/backend
+
+Depois conferir o que tem dentro:
+
+ls
+2. Garantir a estrutura backend
+
+Dentro de backend, a estrutura ideal é:
+
+backend
+├── config
+├── controllers
+├── middlewares
+├── models
+├── routes
+├── services
+├── .env
+├── package.json
+└── server.js
+
+Se alguma pasta não existir, criar:
+
+mkdir config controllers middlewares models routes services
+3. Criar o Model Produto
+
+Arquivo:
+
+backend/models/Produto.js
+
+Com algo assim:
+
+const mongoose = require("mongoose");
+
+const produtoSchema = new mongoose.Schema({
+  nome: {
+    type: String,
+    required: true
+  },
+  descricao: {
+    type: String,
+    required: true
+  },
+  preco: {
+    type: Number,
+    required: true
+  },
+  imagem: {
+    type: String,
+    required: true
+  }
+}, {
+  timestamps: true
+});
+
+module.exports = mongoose.model("Produto", produtoSchema);
+4. Criar as rotas de produtos
+
+Arquivo:
+
+backend/routes/produtos.js
+const express = require("express");
+const router = express.Router();
+
+const Produto = require("../models/Produto");
+
+router.get("/", async (req, res) => {
+  try {
+    const produtos = await Produto.find();
+    res.json(produtos);
+  } catch (error) {
+    res.status(500).json({ mensagem: "Erro ao buscar produtos" });
+  }
+});
+
+router.post("/", async (req, res) => {
+  try {
+    const novoProduto = await Produto.create(req.body);
+    res.status(201).json(novoProduto);
+  } catch (error) {
+    res.status(500).json({ mensagem: "Erro ao cadastrar produto" });
+  }
+});
+
+module.exports = router;
+5. Ligar essa rota no server.js
+
+No arquivo:
+
+backend/server.js
+
+precisa ter:
+
+const express = require("express");
+const cors = require("cors");
+const mongoose = require("mongoose");
+require("dotenv").config();
+
+const produtoRoutes = require("./routes/produtos");
+
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+app.use("/produtos", produtoRoutes);
+
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log("MongoDB conectado");
+
+    app.listen(5000, () => {
+      console.log("Servidor rodando na porta 5000");
+    });
+  })
+  .catch((error) => {
+    console.error("Erro ao conectar no MongoDB:", error);
+  });
+6. No frontend, criar a conexão com a API
+
+Arquivo:
+
+frontend-web/frontend/src/services/api.js
+import axios from "axios";
+
+const api = axios.create({
+  baseURL: "http://localhost:5000"
+});
+
+export default api;
+
+Se a pasta services não existir:
+
+mkdir src/services
+7. Atualizar a Home para buscar produtos
+
+Arquivo:
+
+frontend-web/frontend/src/pages/Home.jsx
+
+A Home deve fazer:
+
+useEffect(() => {
+  buscarProdutos();
+}, []);
+
+E chamar:
+
+const response = await api.get("/produtos");
+
+Ou seja, o fluxo de hoje é:
+
+Home.jsx
+↓
+GET /produtos
+↓
+backend/routes/produtos.js
+↓
+Produto.find()
+↓
+MongoDB
+Ordem certa do projeto
+
+Depois disso, seguimos nesta ordem:
+
+1. Home buscar produtos do backend
+2. Carrinho funcionar no frontend
+3. Login/cadastro
+4. Pedido salvar no banco
+5. Admin cadastrar produtos
+6. Forma de pagamento simples
+7. Pagamento real com gateway
+
+Pagamento fica por último mesmo.
+
+Primeiro pagamento simples será:
+
+PIX
+Cartão
+Dinheiro na entrega
+
+E o pedido depois será salvo mais ou menos assim:
+
+{
+  "produtos": [],
+  "total": 58,
+  "formaPagamento": "PIX",
+  "status": "Pendente"
+}
+
+Então o próximo passo prático agora é este:
+
+cd app_lanchonete/lanchonete_sabor_e_cia/backend
+ls
+
+Depois me mande o que apareceu no terminal que eu te digo exatamente qual arquivo criar ou editar primeiro.
+
+-------------------------------------------------------------------------------------
+Perfeito 😄🚀🌿 esse é o registro certo do que vamos fazer hoje.
+
+Agora o próximo passo é executar no terminal:
+
+cd app_lanchonete/lanchonete_sabor_e_cia/backend
+ls
+
+Depois me envie o resultado que aparecer.
+
+O resultado provavelmente vai ser algo como:
+
+package.json
+server.js
+node_modules
+
+ou talvez:
+
+config
+controllers
+models
+routes
+server.js
+package.json
+
+Com isso eu vou saber se a gente precisa:
+
+criar as pastas do backend;
+criar o models/Produto.js;
+criar o routes/produtos.js;
+ajustar o server.js;
+testar o backend rodando.
+
+Pode mandar exatamente o que apareceu no terminal.
+-------------------------------------------------------------------------------------
+Perfeito 😄🚀🌿 esse é o registro certo do que vamos fazer hoje.
+
+Agora o próximo passo é executar no terminal:
+
+cd app_lanchonete/lanchonete_sabor_e_cia/backend
+ls
+
+Depois me envie o resultado que aparecer.
+
+O resultado provavelmente vai ser algo como:
+
+package.json
+server.js
+node_modules
+
+ou talvez:
+
+config
+controllers
+models
+routes
+server.js
+package.json
+
+Com isso eu vou saber se a gente precisa:
+
+criar as pastas do backend;
+criar o models/Produto.js;
+criar o routes/produtos.js;
+ajustar o server.js;
+testar o backend rodando.
+
+Pode mandar exatamente o que apareceu no terminal.
+
+tinha mais do que isso 
+Pensou por um segundo
+
+Sim, tinha mais coisa mesmo 😄🌿
+O que reconstruímos até agora é a parte central de hoje, mas o projeto completo tinha um roteiro maior.
+
+Pelo que você trouxe, o plano geral da Sabor & Cia era mais ou menos este:
+
+Projeto Sabor & Cia
+
+Transformar a lanchonete em um projeto full stack real, com:
+
+frontend-web
+backend
+app-mobile
+MongoDB
+login/cadastro
+admin
+pedidos
+pagamento
+O que já estava pronto
+
+Você já tinha:
+
+✅ Frontend Vite funcionando
+✅ GitHub funcionando
+✅ Estrutura organizada
+✅ Identidade visual premium
+✅ Logo definido
+✅ Paleta verde petróleo + dourado
+✅ Base do projeto Sabor & Cia criada
+Estrutura geral do projeto
+
+A pasta principal seria algo assim:
+
+app_lanchonete
+└── lanchonete_sabor_e_cia
+    ├── backend
+    ├── frontend-web
+    └── app-mobile
+Papel de cada parte
+Backend
+
+Fica responsável por:
+
+API
+MongoDB
+Produtos
+Usuários
+Login
+Pedidos
+Admin
+Segurança
+Pagamento futuramente
+Frontend Web
+
+Fica responsável por:
+
+Home
+Cardápio
+Carrinho
+Login/cadastro
+Tela admin
+Finalização de pedido
+Escolha de pagamento
+App Mobile
+
+Depois vai consumir o mesmo backend:
+
+mobile → backend → MongoDB
+Ordem correta do desenvolvimento
+
+A ordem maior era:
+
+1. Backend definitivo
+2. Conexão MongoDB
+3. Model Produto
+4. Rotas de produtos
+5. Home buscando produtos do backend
+6. Carrinho funcionando
+7. Cadastro/login de usuário
+8. Model Usuário
+9. Autenticação com token
+10. Model Pedido
+11. Salvar pedido no banco
+12. Admin cadastrar produtos
+13. Admin editar/remover produtos
+14. Forma de pagamento simples
+15. Pagamento real com gateway
+16. Mobile ligado ao mesmo backend
+Ordem imediata de hoje
+
+Hoje, o foco principal era:
+
+1. Entrar na pasta backend
+2. Conferir arquivos com ls
+3. Criar estrutura profissional
+4. Configurar server.js
+5. Conectar MongoDB
+6. Criar Produto.js
+7. Criar produtos.js em routes
+8. Testar GET /produtos
+9. Testar POST /produtos
+10. Ligar Home.jsx no backend
+Backend profissional
+
+A estrutura que seria construída:
+
+backend
+├── config
+├── controllers
+├── middlewares
+├── models
+├── routes
+├── services
+├── .env
+├── package.json
+└── server.js
+Rotas principais que o backend teria
+Produtos
+GET /produtos
+POST /produtos
+PUT /produtos/:id
+DELETE /produtos/:id
+Usuários
+POST /usuarios/cadastro
+POST /usuarios/login
+GET /usuarios/perfil
+Pedidos
+POST /pedidos
+GET /pedidos
+GET /pedidos/:id
+PUT /pedidos/:id/status
+Models principais
+Produto
+nome
+descricao
+preco
+imagem
+categoria
+disponivel
+Usuário
+nome
+email
+senha
+tipo
+telefone
+endereco
+Pedido
+usuario
+produtos
+total
+formaPagamento
+status
+enderecoEntrega
+data
+Fluxo do cardápio
+
+A ideia era:
+
+Admin cadastra produto
+↓
+Produto salva no MongoDB
+↓
+Home busca com GET /produtos
+↓
+Cardápio mostra automaticamente
+Fluxo do pedido
+
+Depois seria:
+
+Cliente adiciona produto ao carrinho
+↓
+Carrinho calcula total
+↓
+Cliente escolhe pagamento
+↓
+Pedido é enviado para backend
+↓
+Pedido salva no MongoDB
+↓
+Admin visualiza pedido
+Pagamento
+
+A ordem era não começar pelo pagamento real ainda.
+
+Primeiro:
+
+PIX
+Cartão
+Dinheiro na entrega
+
+Depois, no futuro:
+
+Mercado Pago
+Stripe
+PagSeguro
+ou outro gateway
+O ponto exato onde paramos
+
+O ponto mais provável era:
+
+cd app_lanchonete/lanchonete_sabor_e_cia/backend
+ls
+
+E eu ia pedir para você mostrar o que apareceu para decidir se começamos criando:
+
+models/Produto.js
+routes/produtos.js
+server.js
+.env
+
+ou se primeiro precisava instalar dependências:
+
+npm install express mongoose cors dotenv
+
+Então sim: tinha mais coisa. O resumo completo é esse roteiro acima.
+Agora o próximo passo real continua sendo me mandar o resultado do:
+
+cd app_lanchonete/lanchonete_sabor_e_cia/backend
+ls
+------------------------------------------------------------------------------------
+Registro do projeto — Sabor & Cia
+Objetivo
+
+Transformar a Sabor & Cia em um projeto full stack real, com:
+
+frontend-web
+backend
+app-mobile
+MongoDB
+login/cadastro
+admin
+pedidos
+pagamento
+O que já estava pronto
+✅ Frontend Vite funcionando
+✅ GitHub funcionando
+✅ Estrutura organizada
+✅ Identidade visual premium
+✅ Logo definido
+✅ Paleta verde petróleo + dourado
+✅ Base do projeto criada
+Estrutura geral
+app_lanchonete
+└── lanchonete_sabor_e_cia
+    ├── backend
+    ├── frontend-web
+    └── app-mobile
+Função de cada parte
+Backend
+
+Responsável por:
+
+API
+MongoDB
+Produtos
+Usuários
+Login
+Pedidos
+Admin
+Segurança
+Pagamento futuramente
+Frontend Web
+
+Responsável por:
+
+Home
+Cardápio
+Carrinho
+Login/cadastro
+Tela admin
+Finalização de pedido
+Escolha de pagamento
+App Mobile
+
+Depois será ligado ao mesmo backend:
+
+mobile → backend → MongoDB
+Ordem correta do desenvolvimento
+1. Backend definitivo
+2. Conexão MongoDB
+3. Model Produto
+4. Rotas de produtos
+5. Home buscando produtos do backend
+6. Carrinho funcionando
+7. Cadastro/login de usuário
+8. Model Usuário
+9. Autenticação com token
+10. Model Pedido
+11. Salvar pedido no banco
+12. Admin cadastrar produtos
+13. Admin editar/remover produtos
+14. Forma de pagamento simples
+15. Pagamento real com gateway
+16. Mobile ligado ao mesmo backend
+Tarefa de hoje
+
+Hoje o foco é:
+
+1. Entrar na pasta backend
+2. Conferir arquivos com ls
+3. Garantir estrutura profissional
+4. Configurar server.js
+5. Conectar MongoDB
+6. Criar Model Produto
+7. Criar rotas de produtos
+8. Testar GET /produtos
+9. Testar POST /produtos
+10. Ligar Home.jsx ao backend
+Estrutura backend profissional
+
+Dentro de:
+
+app_lanchonete/lanchonete_sabor_e_cia/backend
+
+a estrutura ideal será:
+
+backend
+├── config
+├── controllers
+├── middlewares
+├── models
+├── routes
+├── services
+├── .env
+├── package.json
+└── server.js
+Dependências do backend
+
+Se ainda não instalou:
+
+npm install express mongoose cors dotenv
+
+E, se quiser usar reinício automático durante o desenvolvimento:
+
+npm install -D nodemon
+
+No package.json, os scripts podem ficar assim:
+
+{
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  }
+}
+Arquivos principais
+backend/models/Produto.js
+const mongoose = require("mongoose");
+
+const produtoSchema = new mongoose.Schema(
+  {
+    nome: {
+      type: String,
+      required: true
+    },
+    descricao: {
+      type: String,
+      required: true
+    },
+    preco: {
+      type: Number,
+      required: true
+    },
+    imagem: {
+      type: String,
+      required: true
+    },
+    categoria: {
+      type: String,
+      default: "Lanches"
+    },
+    disponivel: {
+      type: Boolean,
+      default: true
+    }
+  },
+  {
+    timestamps: true
+  }
+);
+
+module.exports = mongoose.model("Produto", produtoSchema);
+backend/routes/produtos.js
+const express = require("express");
+const router = express.Router();
+
+const Produto = require("../models/Produto");
+
+// Buscar todos os produtos
+router.get("/", async (req, res) => {
+  try {
+    const produtos = await Produto.find().sort({ createdAt: -1 });
+    res.json(produtos);
+  } catch (error) {
+    res.status(500).json({ mensagem: "Erro ao buscar produtos" });
+  }
+});
+
+// Cadastrar produto
+router.post("/", async (req, res) => {
+  try {
+    const novoProduto = await Produto.create(req.body);
+    res.status(201).json(novoProduto);
+  } catch (error) {
+    res.status(500).json({ mensagem: "Erro ao cadastrar produto" });
+  }
+});
+
+// Atualizar produto
+router.put("/:id", async (req, res) => {
+  try {
+    const produtoAtualizado = await Produto.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
+
+    if (!produtoAtualizado) {
+      return res.status(404).json({ mensagem: "Produto não encontrado" });
+    }
+
+    res.json(produtoAtualizado);
+  } catch (error) {
+    res.status(500).json({ mensagem: "Erro ao atualizar produto" });
+  }
+});
+
+// Remover produto
+router.delete("/:id", async (req, res) => {
+  try {
+    const produtoRemovido = await Produto.findByIdAndDelete(req.params.id);
+
+    if (!produtoRemovido) {
+      return res.status(404).json({ mensagem: "Produto não encontrado" });
+    }
+
+    res.json({ mensagem: "Produto removido com sucesso" });
+  } catch (error) {
+    res.status(500).json({ mensagem: "Erro ao remover produto" });
+  }
+});
+
+module.exports = router;
+backend/server.js
+const express = require("express");
+const cors = require("cors");
+const mongoose = require("mongoose");
+require("dotenv").config();
+
+const produtoRoutes = require("./routes/produtos");
+
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.json({ mensagem: "API Sabor & Cia rodando" });
+});
+
+app.use("/produtos", produtoRoutes);
+
+const PORT = process.env.PORT || 5000;
+
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log("MongoDB conectado");
+
+    app.listen(PORT, () => {
+      console.log(`Servidor rodando na porta ${PORT}`);
+    });
+  })
+  .catch((error) => {
+    console.error("Erro ao conectar no MongoDB:", error);
+  });
+backend/.env
+PORT=5000
+MONGO_URI=sua_string_do_mongodb_aqui
+Rotas principais do projeto
+Produtos
+GET /produtos
+POST /produtos
+PUT /produtos/:id
+DELETE /produtos/:id
+Usuários
+POST /usuarios/cadastro
+POST /usuarios/login
+GET /usuarios/perfil
+Pedidos
+POST /pedidos
+GET /pedidos
+GET /pedidos/:id
+PUT /pedidos/:id/status
+Models planejados
+Produto
+nome
+descricao
+preco
+imagem
+categoria
+disponivel
+Usuário
+nome
+email
+senha
+tipo
+telefone
+endereco
+Pedido
+usuario
+produtos
+total
+formaPagamento
+status
+enderecoEntrega
+data
+Fluxo do cardápio
+Admin cadastra produto
+↓
+Produto salva no MongoDB
+↓
+Home busca com GET /produtos
+↓
+Cardápio mostra automaticamente
+Fluxo do pedido
+Cliente adiciona produto ao carrinho
+↓
+Carrinho calcula total
+↓
+Cliente escolhe pagamento
+↓
+Pedido é enviado para backend
+↓
+Pedido salva no MongoDB
+↓
+Admin visualiza pedido
+Pagamento
+
+Pagamento real vem por último.
+
+Primeiro, formas simples:
+
+PIX
+Cartão
+Dinheiro na entrega
+
+O pedido será salvo assim:
+
+{
+  "produtos": [],
+  "total": 58,
+  "formaPagamento": "PIX",
+  "status": "Pendente"
+}
+
+Depois, no futuro:
+
+Mercado Pago
+Stripe
+PagSeguro
+ou outro gateway
+Ligação do frontend com backend
+frontend-web/frontend/src/services/api.js
+import axios from "axios";
+
+const api = axios.create({
+  baseURL: "http://localhost:5000"
+});
+
+export default api;
+Home buscando produtos
+
+Em Home.jsx, a lógica principal será:
+
+import { useEffect, useState } from "react";
+import api from "../services/api";
+
+export default function Home() {
+  const [produtos, setProdutos] = useState([]);
+
+  async function buscarProdutos() {
+    try {
+      const response = await api.get("/produtos");
+      setProdutos(response.data);
+    } catch (error) {
+      console.error("Erro ao buscar produtos:", error);
+    }
+  }
+
+  useEffect(() => {
+    buscarProdutos();
+  }, []);
+
+  return (
+    <main>
+      <h1>Cardápio Sabor & Cia</h1>
+
+      <section className="produtos">
+        {produtos.map((produto) => (
+          <div className="card" key={produto._id}>
+            <img src={produto.imagem} alt={produto.nome} />
+            <h2>{produto.nome}</h2>
+            <p>{produto.descricao}</p>
+            <strong>R$ {produto.preco}</strong>
+            <button>Adicionar ao carrinho</button>
+          </div>
+        ))}
+      </section>
+    </main>
+  );
+}
+Ponto exato para continuar agora
+
+Execute no terminal:
+
+cd app_lanchonete/lanchonete_sabor_e_cia/backend
+ls
+
+Depois me mande o resultado.
+
+A partir disso, o próximo passo será um destes:
+
+Criar pastas faltantes
+Instalar dependências
+Criar Produto.js
+Criar produtos.js
+Corrigir server.js
+Testar servidor
+Testar GET /produtos
+Testar POST /produtos
+
+Esse agora é o registro mais completo do projeto até aqui.
+Em um chat temporário, a conversa não fica salva no seu histórico e não é usada para memória personalizada.
+
+Sobre “ficar por 30 dias”: normalmente significa que a plataforma pode manter uma cópia por até 30 dias para fins como segurança, abuso e funcionamento do serviço, antes de apagar. Isso não é o mesmo que salvar a conversa no seu histórico visível.
+
+Também: neste chat temporário, alguns recursos podem ficar limitados — por exemplo, geração de imagens pode não estar disponível aqui.
+
+onde eu acho as configurações 
+
+Você encontra assim:
+
+No app do ChatGPT: toque na sua foto/ícone de perfil ou no menu ☰, geralmente no canto superior, e depois toque em Configurações.
+
+No site: clique no seu nome/foto de perfil no canto inferior esquerdo ou superior direito e escolha Configurações.
+
+Para chats temporários, procure algo como Chat temporário no topo/na tela de novo chat. Para privacidade e dados, vá em Configurações → Controles de dados.
+
+a conversa que eu queria foi excluida pelo google mas não fica salva na nuvem
+
+Vou separar duas coisas que costumam confundir: o histórico visível do ChatGPT e os dados que podem existir temporariamente nos servidores da plataforma.
+
+Pensou por alguns segundos
+
+Entendi. Se a conversa foi excluída, ela pode sumir do histórico na hora, mas isso não quer dizer que você consiga recuperar pela “nuvem” do Google.
+
+No ChatGPT, funciona assim:
+
+1. Se era chat normal e foi deletado:
+ele some do histórico imediatamente e fica programado para exclusão permanente dos sistemas da OpenAI em até 30 dias, salvo exceções legais/segurança. Depois de deletado, a própria OpenAI diz que não dá para recuperar.
+
+2. Se era chat temporário:
+ele nunca aparece no histórico, não cria memória e pode ser mantido por até 30 dias apenas para segurança/abuso; depois é apagado.
+
+3. Sobre o Google:
+se você usou login com Google, isso não salva automaticamente suas conversas do ChatGPT no Google Drive/nuvem. O Google pode ter relação com sua conta de login, mas o histórico do ChatGPT fica no próprio ChatGPT, não no Drive.
+
+Você pode tentar verificar só estes lugares:
+
+No ChatGPT: Histórico lateral → Arquivadas ou Configurações → Controles de dados.
+No Google: só haveria algo se você mesmo tivesse copiado, feito print, baixado dados, ou salvo em algum lugar como Drive, Gmail, Docs ou Fotos.
+
+Se foi deletada do ChatGPT e não há cópia manual, provavelmente não tem como recuperar.
+
+Você quis dizer ls, com L minúsculo + S minúsculo.
+
+É assim:
+
+ls
+
+Não é lh, nem 1s.
+
+O comando ls serve para listar o que tem dentro da pasta atual.
+
+Também pode usar:
+
+pwd
+
+para mostrar em qual pasta você está agora.
+
+Então faça:
+
+pwd
+ls
+
+e me mande o resultado que aparecer.
+
+tem um comando pra ver a linha do codigo
+
+Sim 😄
+
+Para ver o código com número das linhas, use:
+
+nl -ba nome-do-arquivo
+
+Exemplo:
+
+nl -ba server.js
+
+Ou, se estiver dentro da pasta backend:
+
+nl -ba routes/produtos.js
+
+Também dá para usar:
+
+cat -n server.js
+
+Mas eu recomendo este:
+
+nl -ba server.js
+
+Para ver só um pedaço do arquivo, por exemplo da linha 1 até a 80:
+
+nl -ba server.js | sed -n '1,80p'
+
+No VS Code, o atalho para mostrar linhas normalmente já fica ativado, mas pelo terminal o melhor é nl -ba.
+
+grep 
+
+Sim 😄 grep serve para procurar texto dentro dos arquivos.
+
+Exemplo simples:
+
+grep "mongoose" server.js
+
+Isso procura a palavra mongoose dentro do arquivo server.js.
+
+Para mostrar também o número da linha, use:
+
+grep -n "mongoose" server.js
+
+Para procurar em vários arquivos dentro da pasta atual:
+
+grep -rn "mongoose" .
+
+No seu projeto, exemplos úteis:
+
+grep -rn "Produto" .
+grep -rn "app.use" server.js
+grep -rn "MONGO_URI" .
+grep -rn "produtos" .
+
+O comando mais útil agora provavelmente é:
+
+grep -rn "produtoRoutes" .
+
+ou:
+
+grep -rn "app.use" server.js
+--------------------------------------------------------------------------------------
+
+Desculpa 😕 Eu não tenho acesso ao chat que foi apagado, então não consigo lembrar literalmente o comando que apareceu lá.
+
+Mas pelo que você descreveu — “saber one line” — pode ser um destes:
+
+grep -n "texto" arquivo
+
+ou:
+
+sed -n 'NUMEROp' arquivo
+
+Exemplo para ver só a linha 20 do server.js:
+
+sed -n '20p' server.js
+
+Exemplo para ver da linha 10 até 30:
+
+sed -n '10,30p' server.js
+
+Também pode ser:
+
+awk 'NR==20' server.js
+
+Se depois você lembrar uma parte do comando, tipo se começava com c, g, s, ou tinha line, eu tento identificar certinho.
+
+------------------------------------------
+
+Entendi 😕 então provavelmente não era grep, sed, awk, cat nem nl.
+
+Para ver onde você está no terminal, o comando é:
+
+pwd
+
+Ele mostra o caminho da pasta atual, tipo:
+
+/home/seu_usuario/app_lanchonete/lanchonete_sabor_e_cia/backend
+
+Se a ideia era “saber onde está” e não “one line”, talvez era esse.
+
+Outros comandos parecidos que talvez fossem o que você lembrou:
+
+realpath server.js
+
+mostra o caminho completo do arquivo.
+
+which node
+
+mostra onde está instalado o node.
+
+whereis node
+
+mostra locais relacionados ao node.
+
+Mas para projeto e terminal, o mais provável é:
+
+pwd
+
+Esse é o comando de “onde estou agora”.
+
+vou ver na documentacao do git
+
+Boa ideia. Na documentação do Git, procure especialmente por:
+
+git blame
+
+Acho que pode ser esse o comando que você queria.
+
+Ele mostra quem alterou cada linha de um arquivo, em qual commit, e ajuda a saber de onde veio aquela linha.
+
+Exemplo:
+
+git blame server.js
+
+Ou para ver uma linha específica:
+
+git blame -L 20,20 server.js
+
+Para um intervalo:
+
+git blame -L 10,30 server.js
+
+Talvez era isso que você lembrava como comando para saber sobre “uma linha” do código.
+
+----------------------------------------
+
+Sim! O que você está lembrando provavelmente é LF e CRLF 😄
+
+Eles não são comandos do Git; são tipos de quebra de linha dos arquivos.
+
+LF   = Line Feed
+CRLF = Carriage Return + Line Feed
+
+Na prática:
+
+LF   → usado mais no Linux/macOS
+CRLF → usado mais no Windows
+
+No Git, isso aparece por causa da configuração:
+
+git config --global core.autocrlf true
+
+ou:
+
+git config --global core.autocrlf input
+
+ou:
+
+git config --global core.autocrlf false
+
+Para ver como está no seu computador:
+
+git config --global core.autocrlf
+
+No Windows, normalmente usa:
+
+git config --global core.autocrlf true
+
+No Linux/macOS, normalmente usa:
+
+git config --global core.autocrlf input
+
+Também pode aparecer um aviso assim:
+
+LF will be replaced by CRLF
+
+ou:
+
+CRLF will be replaced by LF
+
+Isso significa que o Git está ajustando as quebras de linha do arquivo. Não é erro grave; é só diferença de formato entre sistemas.
+
+-------------------------------------------------------------------------
+E sim, esses comandos ajudam muito mesmo no projeto:
+
+pwd
+ls
+ls -la
+git status
+git add .
+git commit -m "mensagem"
+git push
+grep -rn "texto" .
+nl -ba arquivo.js
+git blame arquivo.js
+git blame -L 20,20 arquivo.js
+git config --global core.autocrlf
+
+O importante é ir usando aos poucos. Para o Sabor & Cia, os mais úteis agora são:
+
+pwd
+ls
+git status
+git add .
+git commit -m "mensagem"
+git push
+
+Eles vão te ajudar a não se perder nas pastas e a salvar cada etapa do projeto com segurança.
+
+-------------------------------------------------------------------------------

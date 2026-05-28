@@ -3,3 +3,19 @@ node_modules
 .expo
 dist
 build
+# Arquivos temporários da recuperação
+package.json.backup
+package.json.save
+server.js.bak
+routes/produtos.funcionando-simples.js
+routes/produtos.js.backup
+lanchonete_sabor_e_cia_limpo_incompleto/
+
+# Documentações duplicadas
+# Documentação da Recuperação do Backend.md
+Documentação da Recuperação do Backend.md
+
+# Cópias da documentação fora da raiz
+backend/DOCUMENTACAO_RECUPERACAO_BACKEND.md
+frontend/DOCUMENTACAO_RECUPERACAO_BACKEND.md
+backup_lanchonete_seguro/
